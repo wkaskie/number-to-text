@@ -6,6 +6,15 @@
 */
 
 const convertToWords = (digitalVersion) => {
+    if (typeof digitalVersion !== 'number') {
+        try {
+            digitalVersion = parseInt(digitalVersion.replace(/,/g, ''), 10);
+            if (isNaN(digitalVersion)) return 'Invalid input. Please enter a valid number';
+        } catch {
+            return 'Invalid input. Please enter a valid number';
+        }
+    }
+
     const numberArray = digitalVersion.toString(10).replace(/\D/g, '0').split('').map(Number); // [3, 2, 7, 9]
     const reversedNumber = numberArray.reverse(); // [9, 7, 2, 3];  
     const place = ['hundred', 'thousand', 'million', 'billion', 'trillion'];
@@ -57,8 +66,8 @@ const convertToWords = (digitalVersion) => {
     return stringVersionArray.filter(digit => digit !== '').join(' ');
 }
 const logConvertToWords = (testNumber) => {
-    console.log(`${testNumber} is the same as "${convertToWords(testNumber)}"`);
+    console.log(`${testNumber} results in "${convertToWords(testNumber)}"`);
 }
 
-testVars = [8, 13, 103, 3032, 15657, 918004, 4280617, 700100100];
+testVars = [8, 13, 103, 3032, 15657, 918004, 4280617, '700,100,100', 'some string'];
 testVars.forEach(logConvertToWords);
