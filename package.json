@@ -1,0 +1,24 @@
+{
+  "name": "numbers-to-text",
+  "version": "1.0.0",
+  "description": "A simple function to convert a digital number to human readable text",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wkaskie/number-to-text.git"
+  },
+  "keywords": [
+    "demo",
+    "test",
+    "sample"
+  ],
+  "author": "Wayne F. Kaskie, Sr.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wkaskie/number-to-text/issues"
+  },
+  "homepage": "https://github.com/wkaskie/number-to-text#readme"
+}
