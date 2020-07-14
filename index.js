@@ -15,8 +15,8 @@ const convertToWords = (digitalVersion) => {
         }
     }
 
-    const numberArray = digitalVersion.toString(10).replace(/\D/g, '0').split('').map(Number); // [3, 2, 7, 9]
-    const reversedNumber = numberArray.reverse(); // [9, 7, 2, 3];  
+    const numberArray = digitalVersion.toString(10).replace(/\D/g, '0').split('').map(Number);
+    const reversedNumber = numberArray.reverse(); 
     const place = ['hundred', 'thousand', 'million', 'billion', 'trillion'];
     const teens = ['ten', 'eleven', 'twelve', 'thriteen', '', 'fifteen',];
     const tenthPlace = ['', '0', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
@@ -65,6 +65,8 @@ const convertToWords = (digitalVersion) => {
 
     return stringVersionArray.filter(digit => digit !== '').join(' ');
 }
+
+// ========== Execute Test =====================
 const logConvertToWords = (testNumber) => {
     console.log(`${testNumber} results in "${convertToWords(testNumber)}"`);
 }
